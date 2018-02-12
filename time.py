@@ -27,12 +27,19 @@ def time_to_games(time):
     atime = pactime.strftime('%I%M')
     hours(str(atime), time)    
 
-print "Channing's Time: ", eastime.strftime('%I:%M %p')
+def printer():
+    print "Channing's Time: ", eastime.strftime('%I:%M %p')
 
-print "Alex's Time: ", pactime.strftime('%I:%M %p')
+    print "Alex's Time: ", pactime.strftime('%I:%M %p')
 
-time = str(raw_input("When are games? \n"))
+    time = str(raw_input("When are games? \n"))
 
-print "Games will be at %s" % (int(time) + 300)
+    if len(time) != 4:
+        time = str(raw_input("I need 4 digits, when are games? \n"))
 
-time_to_games(time)
+    print "Games will be at %s" % (int(time) + 300)
+
+    time_to_games(time)
+
+if __name__ == '__main__':
+    printer()
